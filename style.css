@@ -1,0 +1,65 @@
+:root{--bg:#f3f6f8;--c:#fff;--ink:#14232e;--mut:#465a68;--p:#1f5f8b;--pt:#fff;--ok:#17734a;--bad:#b3261e;--warn:#9a5b00;--ln:#c5d1d9}
+[data-theme=dark]{--bg:#0e1a22;--c:#16262f;--ink:#e6eef3;--mut:#a5b7c3;--p:#6bb6e8;--pt:#08202e;--ok:#5fd39a;--bad:#ff8a80;--warn:#f0b35a;--ln:#2c414d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.brand{font-family:Georgia,serif;line-height:1.25}
+a{color:var(--p)}
+:focus-visible{outline:3px solid var(--warn);outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:var(--c);padding:.5rem;z-index:9}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+header{display:flex;flex-wrap:wrap;gap:.5rem 1rem;align-items:center;padding:.75rem 1rem;background:var(--c);border-bottom:1px solid var(--ln)}
+.brand{font-size:1.2rem;font-weight:700;color:var(--ink);text-decoration:none}
+.brand small{display:block;font:.75rem system-ui,sans-serif;color:var(--mut)}
+nav{display:flex;flex-wrap:wrap;gap:.25rem}
+nav a{padding:.4rem .7rem;border-radius:6px;color:var(--ink);text-decoration:none}
+nav a[aria-current=page]{background:var(--p);color:var(--pt)}
+#mt{display:none}
+#sf{display:flex;gap:.3rem}
+main{max-width:860px;margin:0 auto;padding:1rem;outline:none}
+footer{max-width:860px;margin:0 auto;padding:1rem;color:var(--mut);font-size:.9rem}
+button,.btn,select,input{font:inherit}
+button,.btn{background:var(--c);color:var(--ink);border:1px solid var(--p);border-radius:6px;padding:.5rem .9rem;cursor:pointer;text-decoration:none;display:inline-block}
+.pri{background:var(--p);color:var(--pt)}
+select,input[type=search]{padding:.45rem;border:1px solid var(--ln);border-radius:6px;background:var(--c);color:var(--ink);max-width:100%}
+.hero{background:var(--p);color:var(--pt);border-radius:12px;padding:2rem 1.25rem;margin-bottom:1rem}
+.hero h1{font-size:clamp(2rem,7vw,3.4rem);margin:0}
+.hero p{font-size:1.15rem;margin:.4rem 0 1.2rem}
+.hero .btn{background:var(--pt);color:var(--p);border-color:var(--pt)}
+.card{background:var(--c);border:1px solid var(--ln);border-radius:10px;padding:1rem;margin:0 0 1rem}
+.row{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:space-between}
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.75rem;margin-bottom:.75rem}
+.form label{display:flex;flex-direction:column;gap:.2rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.6rem;margin-bottom:1rem}
+.stat{background:var(--c);border:1px solid var(--ln);border-radius:8px;padding:.7rem;color:var(--ink);text-decoration:none}
+.stat b{display:block;font-size:1.3rem}
+progress{width:100%;height:10px}
+.q{font-size:1.15rem}
+.opt{display:block;width:100%;text-align:left;margin:.4rem 0;border-color:var(--ln)}
+.opt.sel{border:2px solid var(--p)}.opt.ok{border:2px solid var(--ok)}.opt.bad{border:2px solid var(--bad)}
+.ex{border-left:4px solid var(--p);padding-left:.75rem}
+.meta{color:var(--mut);font-size:.9rem}
+.big{font:700 1.8rem Georgia,serif}
+.tm{font:700 1.3rem ui-monospace,monospace}.tm.warn{color:var(--bad)}
+.navg{display:flex;flex-wrap:wrap;gap:.3rem}
+.navg button{min-width:2.4rem;padding:.3rem 0;text-align:center}
+.navg .un{background:var(--bg);border-color:var(--ln)}
+.navg .an{background:var(--p);color:var(--pt)}
+.navg .fl{background:var(--warn);color:var(--pt);border-color:var(--warn)}
+.navg .cur{outline:3px solid var(--ink)}
+.fc{width:100%;min-height:180px;font-size:1.3rem;text-align:center;margin:.5rem 0}
+details.note{background:var(--c);border:1px solid var(--ln);border-radius:8px;padding:.6rem 1rem;margin-bottom:.6rem}
+summary{cursor:pointer;font-weight:600}
+dt{margin-top:.8rem}dd{margin-left:0}
+@media(max-width:700px){
+  #mt{display:inline-block;margin-left:auto}
+  nav{display:none;width:100%;flex-direction:column}
+  nav.open{display:flex}
+  #sf{width:100%}#sq{flex:1;min-width:0}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+@media print{
+  header,footer,button,.skip{display:none!important}
+  body{background:#fff;color:#000}
+  .note:not(.pr),h1,main>p{display:none}
+  .note.pr{border:0}
+}
